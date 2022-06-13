@@ -15,6 +15,7 @@ public class placer : MonoBehaviour
         if (Physics.Raycast(ray, out hitinfo))
         {
             cube.position = hitinfo.point;
+            cube.rotation = Quaternion.FromToRotation(Vector3.up, hitinfo.normal);
         }
     }
 }
